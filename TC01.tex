@@ -1,0 +1,152 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[margin=2.5cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\title{
+    \textbf{1º Trabalho Computacional} \\
+    \large T10097 - Introdução ao Reconhecimento de Padrões
+}
+\author{
+    \textbf{Aluno:} Hubert Luz de Miranda \\
+    \textbf{Matrícula:} 552798
+}
+\date{Fortaleza, \today}
+
+\begin{document}
+
+\maketitle 
+
+\begin{center}
+    \textbf{Professor Responsável:} Prof. Guilherme de Alencar Barreto  \\
+    \textbf{Instituição:} Universidade Federal do Ceará (UFC) 
+\end{center}
+
+\newpage
+
+\section*{Objetivos}
+Os objetivos deste trabalho são:
+\begin{enumerate}
+    \item Estimar a matriz de covariância de um conjunto de dados, comparando sistematicamente o tempo de execução de diferentes algoritmos.
+    \item Avaliar a invertibilidade da matriz de covariância estimada.
+    \item Inverter e, se necessário, regularizar as matrizes de covariância obtidas.
+\end{enumerate}
+
+\section{Estimativa da Matriz de Covariância}
+
+\subsection{Resultados}
+Podemos visualizar os resultados da estimativa da matriz de covariância global no arquivo TC01.ipynb, visualmente os metódos apresentam
+resultados iguais, mas ao realizar a subtração entre as matrizes de covariância estimadas e a matriz nativa, notamos que os métodos 1, 3 e 4
+apresentam pequenas diferenças (muito próximas de zero), enquanto o método 2 e a função nativa têm diferenças iguais a zero na grande maioria
+da matriz de diferenças.
+
+\subsection{Comentários}
+Esses resultados nos levam a acreditar que o método nativo utilizado no notebook é implementado de maneira similar ao segundo
+método descrito em aula.
+
+\section{Análise de Desempenho dos Métodos}
+
+\subsection{Resultados Numéricos}
+\begin{table}[H]
+    \centering
+    \caption{Tempo de execução (100 rodadas).}
+    \label{tab:tempos}
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Método} & \textbf{Tempo Médio (s)} & \textbf{Desvio-Padrão (s)} \\
+        \midrule
+        Método 1        &       &         \\
+        Método 2        &       &         \\
+        Método 3        &       &         \\
+        Método 4        &       &         \\
+        Função Nativa   &       &         \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Análise Gráfica}
+
+
+\subsection{Comentários}
+
+
+\section{Análise de Invertibilidade}
+
+\subsection{Resultados}
+\begin{table}[H]
+    \centering
+    \caption{Análise de invertibilidade das matrizes de covariância.}
+    \label{tab:invert}
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Matriz de Covariância} & \textbf{Posto (rank)} & \textbf{Número de Condicionamento (rcond)} \\
+        \midrule
+        Global                         &      &      \\
+        Classe 1                       &      &      \\
+        Classe 2                       &      &      \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Comentários}
+
+
+\section{Inversão e Regularização das Matrizes}
+
+
+\subsection{Matrizes Inversas}
+
+
+\subsection{Técnica de Regularização (se aplicável)}
+
+
+\subsection{Comentários}
+
+
+
+\end{document}
